@@ -1,0 +1,5 @@
+name = "mituke"
+compatibility_date = "2025-01-01"
+
+[env.staging]
+name = "mituke-staging"
