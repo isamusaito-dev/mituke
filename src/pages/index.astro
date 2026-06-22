@@ -62,17 +62,78 @@ import '../styles/global.css';
 
       <!-- features -->
       <section class="px-6 py-16 border-t border-[var(--line)]">
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { label: '10問', desc: '採用の現状を把握する厳選された設問' },
-            { label: '5軸', desc: '認知・訴求・導線・効率・将来の視点でスコア化' },
-            { label: '無料', desc: '診断から詳細レポート受け取りまで完全無料' },
-          ].map(({ label, desc }) => (
-            <div class="text-center">
-              <p class="font-cormorant text-5xl font-medium text-[var(--terracotta)] mb-2">{label}</p>
-              <p class="text-sm text-[var(--muted)]">{desc}</p>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <!-- 10問 -->
+          <div class="bg-[var(--paper)] border border-[var(--line)] rounded-2xl p-7 flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[var(--green)]/10 flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="#3B5A3F" stroke-width="1.5"/>
+                <line x1="8" y1="8" x2="16" y2="8" stroke="#3B5A3F" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="8" y1="12" x2="16" y2="12" stroke="#3B5A3F" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="8" y1="16" x2="13" y2="16" stroke="#3B5A3F" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
             </div>
-          ))}
+            <div>
+              <p class="text-4xl font-bold text-[var(--terracotta)] mb-1 leading-none">10問</p>
+              <p class="text-xs text-[var(--muted)] font-medium tracking-wide uppercase mb-3">Questions</p>
+              <p class="text-sm text-[var(--ink)] leading-relaxed">採用の現状を把握する<br/>厳選された設問</p>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-2">
+              {['認知', '訴求', '導線', '効率', '将来'].map((tag) => (
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-[var(--green)]/8 text-[var(--green)] font-medium">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <!-- 5軸 -->
+          <div class="bg-[var(--green)] rounded-2xl p-7 flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12,3 20.5,9 17.5,19 6.5,19 3.5,9" stroke="white" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+                <polygon points="12,7.5 17,11 15,17 9,17 7,11" stroke="white" stroke-width="1" fill="white" fill-opacity="0.2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-4xl font-bold text-white mb-1 leading-none">5軸</p>
+              <p class="text-xs text-white/60 font-medium tracking-wide uppercase mb-3">Dimensions</p>
+              <p class="text-sm text-white/85 leading-relaxed">認知・訴求・導線・効率・将来の<br/>視点でスコア化</p>
+            </div>
+            <div class="mt-auto">
+              <div class="grid grid-cols-5 gap-1">
+                {[75, 50, 88, 62, 40].map((h) => (
+                  <div class="flex flex-col items-center gap-1">
+                    <div class="w-full bg-white/20 rounded-full overflow-hidden" style="height:40px; display:flex; align-items:flex-end;">
+                      <div class="w-full rounded-full bg-white/70" style={`height:${h}%`}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- 無料 -->
+          <div class="bg-[var(--paper)] border border-[var(--line)] rounded-2xl p-7 flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[var(--terracotta)]/10 flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#B84130" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-4xl font-bold text-[var(--terracotta)] mb-1 leading-none">無料</p>
+              <p class="text-xs text-[var(--muted)] font-medium tracking-wide uppercase mb-3">Completely Free</p>
+              <p class="text-sm text-[var(--ink)] leading-relaxed">診断から詳細レポート<br/>受け取りまで完全無料</p>
+            </div>
+            <div class="mt-auto space-y-2">
+              {['診断ツール', '詳細レポート（20〜25p）', 'ヒアリング相談'].map((item) => (
+                <div class="flex items-center gap-2 text-xs text-[var(--muted)]">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#B84130" fill-opacity="0.12"/><path d="M4.5 7L6.5 9L9.5 5.5" stroke="#B84130" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
     </main>
