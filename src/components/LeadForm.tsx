@@ -39,18 +39,28 @@ export default function LeadForm({ totalScore, weakestAxis }: Props) {
           ありがとうございます
         </h3>
         <p className="text-sm text-[var(--muted)] leading-relaxed mb-6">
-          ガイドはご入力のメールアドレスにお送りします。
+          下のボタンからガイド（PDF）をすぐにダウンロードできます。
           <br />
           より具体的に相談されたい方は、ヒアリング（無料・30分）もご利用ください。
         </p>
-        <a
-          href="https://calendly.com/hunches"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 rounded-full bg-[var(--green)] text-white text-sm font-medium hover:bg-[var(--green-deep)] transition-colors"
-        >
-          無料ヒアリングを予約する →
-        </a>
+        <div className="flex flex-col items-center gap-3">
+          <a
+            href="/guide.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 rounded-full bg-[var(--green)] text-white text-sm font-bold hover:bg-[var(--green-deep)] transition-colors"
+          >
+            採用改善ガイドをダウンロード ↓
+          </a>
+          <a
+            href="https://calendly.com/hunches"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-[var(--navy)] font-medium underline underline-offset-2 hover:text-[var(--green)] transition-colors"
+          >
+            無料ヒアリングを予約する →
+          </a>
+        </div>
       </div>
     );
   }

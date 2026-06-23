@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#162C53; --navy2:#0F2140; --teal:#0BA696; --teal-d:#098576;
+    --mint:#B9E1D7; --cream:#EFF4F3; --paper:#FFFFFF; --ink:#1F2A3A;
+    --muted:#69748A; --line:#DCE6E3; --warn:#D9694A;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  @page{ size:A4; margin:0; }
+  html,body{ font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{
+    position:relative; width:210mm; height:297mm; overflow:hidden;
+    page-break-after:always; background:var(--paper);
+  }
+  .page:last-child{ page-break-after:auto; }
+  .pad{ padding:20mm 18mm; height:100%; display:flex; flex-direction:column; }
+
+  /* footer */
+  .foot{ position:absolute; left:18mm; right:18mm; bottom:11mm; display:flex; justify-content:space-between; align-items:center; font-size:8pt; color:var(--muted); }
+  .foot img{ height:13px; opacity:.9; }
+
+  /* typography */
+  h2.sec{ font-size:9pt; letter-spacing:.18em; color:var(--teal); font-weight:700; }
+  .lead{ font-size:10.5pt; line-height:2; color:var(--ink); }
+  .muted{ color:var(--muted); }
+
+  /* axis header */
+  .axhead{ display:flex; align-items:center; gap:14px; padding-bottom:14px; border-bottom:2px solid var(--line); margin-bottom:18px; }
+  .axnum{ width:46px; height:46px; border-radius:12px; background:var(--navy); color:var(--mint); font-size:17pt; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .axtitle{ font-size:21pt; font-weight:700; color:var(--navy); line-height:1.1; }
+  .axsub{ font-size:9.5pt; color:var(--muted); margin-top:3px; }
+
+  /* blocks */
+  .blk{ margin-bottom:16px; }
+  .blkhd{ display:flex; align-items:center; gap:7px; font-size:11pt; font-weight:700; margin-bottom:9px; }
+  .dot{ width:18px; height:18px; border-radius:50%; color:#fff; font-size:9pt; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .fail .dot{ background:var(--warn); } .fail .blkhd{ color:var(--warn); }
+  .fix .dot{ background:var(--teal); } .fix .blkhd{ color:var(--teal-d); }
+  .item{ display:flex; gap:9px; margin-bottom:8px; }
+  .item .mk{ color:var(--line); font-weight:700; flex:0 0 auto; }
+  .fail .mk{ color:var(--warn); } .fix .mk{ color:var(--teal); }
+  .item b{ font-size:10.5pt; font-weight:700; color:var(--ink); }
+  .item p{ font-size:9.5pt; line-height:1.7; color:var(--muted); margin-top:1px; }
+
+  /* first step box */
+  .first{ margin-top:auto; background:var(--cream); border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:10px; padding:14px 16px; }
+  .first .l{ font-size:8.5pt; font-weight:700; letter-spacing:.1em; color:var(--teal-d); margin-bottom:4px; }
+  .first .t{ font-size:11.5pt; font-weight:700; color:var(--navy); line-height:1.5; }
+</style>
+</head>
+<body>
+
+<!-- ============ P1 COVER ============ -->
+<section class="page" style="background:var(--navy);">
+  <div class="pad" style="justify-content:space-between;">
+    <div>
+      <img src="file:///Users/isamu/Desktop/mituke/public/logo-white.svg" style="height:30px;" />
+    </div>
+    <div>
+      <p style="font-size:10pt; letter-spacing:.22em; color:var(--mint); font-weight:700;">RECRUITMENT IMPROVEMENT GUIDE</p>
+      <p style="font-size:11pt; color:rgba(255,255,255,.7); margin-top:18px;">地方の中小企業のための</p>
+      <h1 style="font-size:42pt; font-weight:900; color:#fff; line-height:1.18; margin-top:6px; letter-spacing:.01em;">採用改善<br/>ガイド</h1>
+      <p style="font-size:11.5pt; color:rgba(255,255,255,.82); line-height:2; margin-top:22px; max-width:120mm;">
+        「何が問題かわからない」を、「次にやることが決まっている」に。<br/>
+        採用力を5つの軸で分解し、軸ごとの<b style="color:var(--mint);">よくある失敗</b>と<b style="color:var(--mint);">具体的な打ち手</b>をまとめました。
+      </p>
+      <div style="display:inline-block; margin-top:26px; background:var(--mint); color:var(--navy); font-weight:700; font-size:10pt; padding:8px 18px; border-radius:999px;">PDF ・ 全10ページ</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div style="display:flex; gap:6px; flex-wrap:wrap; max-width:120mm;">
+        <span style="font-size:8.5pt; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.25); padding:3px 10px; border-radius:999px;">長野</span>
+        <span style="font-size:8.5pt; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.25); padding:3px 10px; border-radius:999px;">群馬</span>
+        <span style="font-size:8.5pt; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.25); padding:3px 10px; border-radius:999px;">山梨</span>
+        <span style="font-size:8.5pt; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.25); padding:3px 10px; border-radius:999px;">新潟</span>
+        <span style="font-size:8.5pt; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.25); padding:3px 10px; border-radius:999px;">埼玉</span>
+        <span style="font-size:8.5pt; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.25); padding:3px 10px; border-radius:999px;">栃木</span>
+      </div>
+      <p style="font-size:9pt; color:rgba(255,255,255,.55);">mituke.life</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ P2 INTRO + 5 AXES ============ -->
+<section class="page">
+  <div class="pad">
+    <h2 class="sec">はじめに</h2>
+    <h3 style="font-size:19pt; font-weight:700; color:var(--navy); margin:8px 0 14px; line-height:1.3;">採用は「気合い」ではなく、<br/>分解すれば改善できます。</h3>
+    <p class="lead" style="margin-bottom:10px;">
+      地方の中小企業の採用は、大手と同じ土俵では戦えません。母集団は小さく、担当者は兼任、予算も限られます。
+      それでも採用がうまくいく会社とそうでない会社の差は、「どこに問題があるかを正しく特定し、効く順番で手を打てているか」にあります。
+    </p>
+    <p class="lead" style="margin-bottom:22px;">
+      本ガイドでは、採用力を次の<b>5つの軸</b>に分解します。自社の弱い軸から読み、まずは各ページ末尾の「最初の一手」だけでも実行してみてください。
+    </p>
+
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:12px; padding:13px 16px;">
+        <div style="width:38px;height:38px;border-radius:9px;background:var(--navy);color:var(--mint);font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">01</div>
+        <div><b style="font-size:12pt;color:var(--navy);">認知力</b> <span style="font-size:9.5pt;color:var(--muted);margin-left:8px;">求職者に、自社が届いているか</span></div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:12px; padding:13px 16px;">
+        <div style="width:38px;height:38px;border-radius:9px;background:var(--navy);color:var(--mint);font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">02</div>
+        <div><b style="font-size:12pt;color:var(--navy);">訴求力</b> <span style="font-size:9.5pt;color:var(--muted);margin-left:8px;">働く魅力が、伝わっているか</span></div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:12px; padding:13px 16px;">
+        <div style="width:38px;height:38px;border-radius:9px;background:var(--navy);color:var(--mint);font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">03</div>
+        <div><b style="font-size:12pt;color:var(--navy);">導線力</b> <span style="font-size:9.5pt;color:var(--muted);margin-left:8px;">迷わず応募まで進めるか</span></div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:12px; padding:13px 16px;">
+        <div style="width:38px;height:38px;border-radius:9px;background:var(--navy);color:var(--mint);font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">04</div>
+        <div><b style="font-size:12pt;color:var(--navy);">効率力</b> <span style="font-size:9.5pt;color:var(--muted);margin-left:8px;">採用業務に、無理がないか</span></div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:12px; padding:13px 16px;">
+        <div style="width:38px;height:38px;border-radius:9px;background:var(--navy);color:var(--mint);font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">05</div>
+        <div><b style="font-size:12pt;color:var(--navy);">将来力</b> <span style="font-size:9.5pt;color:var(--muted);margin-left:8px;">仕組み・計画・AI活用の伸びしろ</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>02</span></div>
+</section>
+
+<!-- ============ P3 AXIS 1 認知力 ============ -->
+<section class="page">
+  <div class="pad">
+    <div class="axhead">
+      <div class="axnum">01</div>
+      <div><div class="axtitle">認知力</div><div class="axsub">求職者に、自社が届いているか</div></div>
+    </div>
+
+    <div class="blk fail">
+      <div class="blkhd"><span class="dot">!</span>よくある失敗</div>
+      <div class="item"><span class="mk">―</span><div><b>ハローワーク頼みで母集団が小さい</b><p>無料で使える反面、登録する求職者層が限られ、そもそも見てもらえる人数が少ない。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>「会社名+求人」で検索しても何も出てこない</b><p>興味を持った人が会社名で調べたとき、情報が古い・薄いと、その時点で離脱する。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>募集が不定期で、見つかる前に終わる</b><p>必要になってから慌てて出すため、露出期間が短く認知が積み上がらない。</p></div></div>
+    </div>
+
+    <div class="blk fix">
+      <div class="blkhd"><span class="dot">✓</span>打ち手</div>
+      <div class="item"><span class="mk">+</span><div><b>接点を最低3チャネルに増やす</b><p>「無料媒体2つ＋有料1つ」から開始。Indeedは無料掲載＋クリック課金で地方でも費用対効果が高い。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>社名検索の“受け皿”を整える</b><p>自社サイトの採用ページとGoogleビジネスプロフィールを最新化し、調べた人を取りこぼさない。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>SNSで職場の日常を月2回発信</b><p>働く様子を継続発信すると、指名検索・口コミ経由の応募が少しずつ増える。</p></div></div>
+    </div>
+
+    <div class="first"><div class="l">FIRST STEP ／ 最初の一手</div><div class="t">Indeedに無料登録し、自社の求人を1本載せる（所要30分）。</div></div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>03</span></div>
+</section>
+
+<!-- ============ P4 AXIS 2 訴求力 ============ -->
+<section class="page">
+  <div class="pad">
+    <div class="axhead">
+      <div class="axnum">02</div>
+      <div><div class="axtitle">訴求力</div><div class="axsub">働く魅力が、伝わっているか</div></div>
+    </div>
+
+    <div class="blk fail">
+      <div class="blkhd"><span class="dot">!</span>よくある失敗</div>
+      <div class="item"><span class="mk">―</span><div><b>「アットホームな職場」しか書いていない</b><p>どの会社でも言える言葉は、求職者の記憶にも比較対象にも残らない。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>社員の顔・声がなく、入社後が想像できない</b><p>誰と働くのかが見えないと、不安が先に立ち応募に至らない。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>条件だけで、働く“意味”が伝わらない</b><p>給与・休日の羅列だけでは、他社との価格競争になり負ける。</p></div></div>
+    </div>
+
+    <div class="blk fix">
+      <div class="blkhd"><span class="dot">✓</span>打ち手</div>
+      <div class="item"><span class="mk">+</span><div><b>「うちで働く理由」を3つ言語化する</b><p>社員に聞いて具体化し、採用ページの一番上に掲載。これが訴求の軸になる。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>社員インタビューを1人分載せる</b><p>写真＋3問（入社の決め手・やりがい・1日の流れ）だけでも、リアルさが段違いに増す。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>正直な情報を書く</b><p>繁忙期や大変さも書くと、ミスマッチが減り、入社後の定着率が上がる。</p></div></div>
+    </div>
+
+    <div class="first"><div class="l">FIRST STEP ／ 最初の一手</div><div class="t">既存社員1人に「入社の決め手・やりがい」を5分ヒアリングして、文章にする。</div></div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>04</span></div>
+</section>
+
+<!-- ============ P5 AXIS 3 導線力 ============ -->
+<section class="page">
+  <div class="pad">
+    <div class="axhead">
+      <div class="axnum">03</div>
+      <div><div class="axtitle">導線力</div><div class="axsub">迷わず応募まで進めるか</div></div>
+    </div>
+
+    <div class="blk fail">
+      <div class="blkhd"><span class="dot">!</span>よくある失敗</div>
+      <div class="item"><span class="mk">―</span><div><b>応募が電話のみ・平日日中のみ</b><p>働きながら転職を考える人は、日中に電話できない。最大の取りこぼし要因。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>応募フォームの項目が多すぎる</b><p>志望動機や職歴を最初から求めると、面倒で途中離脱される。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>スマホで見ると崩れる・読みにくい</b><p>求職者の大半はスマホ。見づらい時点で候補から外れる。</p></div></div>
+    </div>
+
+    <div class="blk fix">
+      <div class="blkhd"><span class="dot">✓</span>打ち手</div>
+      <div class="item"><span class="mk">+</span><div><b>24時間スマホから1分で送れる窓口</b><p>フォームやLINEで、いつでも応募・問い合わせできる状態をつくる。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>必須項目は「名前・連絡先」だけに</b><p>詳しい話は面談で聞く。まず接点を持つことを最優先にする。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>「まず話を聞くだけ」のカジュアル面談</b><p>応募のハードルを下げる入口を用意し、検討段階の人を逃さない。</p></div></div>
+    </div>
+
+    <div class="first"><div class="l">FIRST STEP ／ 最初の一手</div><div class="t">応募フォームの必須項目を3つ以内に減らす。</div></div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>05</span></div>
+</section>
+
+<!-- ============ P6 AXIS 4 効率力 ============ -->
+<section class="page">
+  <div class="pad">
+    <div class="axhead">
+      <div class="axnum">04</div>
+      <div><div class="axtitle">効率力</div><div class="axsub">採用業務に、無理がないか</div></div>
+    </div>
+
+    <div class="blk fail">
+      <div class="blkhd"><span class="dot">!</span>よくある失敗</div>
+      <div class="item"><span class="mk">―</span><div><b>社長・総務が片手間で対応が遅れる</b><p>連絡が数日後になり、その間に候補者は動きの速い他社へ流れる。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>誰が何をやるか決まっていない</b><p>属人化していて、担当者が不在だと採用が止まる。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>応募者の状況が見えていない</b><p>「どこまで進んだか」が把握できず、対応漏れや二重連絡が起きる。</p></div></div>
+    </div>
+
+    <div class="blk fix">
+      <div class="blkhd"><span class="dot">✓</span>打ち手</div>
+      <div class="item"><span class="mk">+</span><div><b>「24時間以内に一次連絡」をルール化</b><p>スピードは中小企業が大手に勝てる数少ない武器。最優先で徹底する。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>返信テンプレ・日程調整の型を用意</b><p>毎回ゼロから書かない。テンプレ化で工数を半減させる。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>簡易な管理表で見える化</b><p>スプレッドシート1枚で応募者の状況を一覧化し、抜け漏れを防ぐ。</p></div></div>
+    </div>
+
+    <div class="first"><div class="l">FIRST STEP ／ 最初の一手</div><div class="t">応募者への一次返信テンプレを1つ作っておく。</div></div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>06</span></div>
+</section>
+
+<!-- ============ P7 AXIS 5 将来力 ============ -->
+<section class="page">
+  <div class="pad">
+    <div class="axhead">
+      <div class="axnum">05</div>
+      <div><div class="axtitle">将来力</div><div class="axsub">仕組み・計画・AI活用の伸びしろ</div></div>
+    </div>
+
+    <div class="blk fail">
+      <div class="blkhd"><span class="dot">!</span>よくある失敗</div>
+      <div class="item"><span class="mk">―</span><div><b>計画がなく、必要になって慌てる</b><p>その都度ゼロから募集するため、毎回コストも手間もかさむ。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>紙・Excel管理でデータが活きない</b><p>過去の応募者や効果のあった施策が蓄積されず、学習が起きない。</p></div></div>
+      <div class="item"><span class="mk">―</span><div><b>何が効いたか分からない</b><p>振り返りの材料がなく、改善のしようがない。</p></div></div>
+    </div>
+
+    <div class="blk fix">
+      <div class="blkhd"><span class="dot">✓</span>打ち手</div>
+      <div class="item"><span class="mk">+</span><div><b>年間の採用計画を1枚にまとめる</b><p>人数・時期・予算・チャネルを先に決めると、前倒しで動けて余裕が生まれる。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>安価なツールで応募〜選考を一元管理</b><p>無料/低価格のATSやチャットツールで、データを蓄積し改善に活かす。</p></div></div>
+      <div class="item"><span class="mk">+</span><div><b>AIで文章づくりを時短</b><p>求人原稿・スカウト文・面接質問の下書きをAIに任せ、人は判断に集中する。</p></div></div>
+    </div>
+
+    <div class="first"><div class="l">FIRST STEP ／ 最初の一手</div><div class="t">来期の「採用人数」と「時期」だけでも、紙1枚に書き出す。</div></div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>07</span></div>
+</section>
+
+<!-- ============ P8 BOTTLENECK MAP ============ -->
+<section class="page">
+  <div class="pad">
+    <h2 class="sec">どこから手をつけるか</h2>
+    <h3 style="font-size:19pt; font-weight:700; color:var(--navy); margin:8px 0 6px;">弱い軸 × 最初の一手</h3>
+    <p class="lead muted" style="font-size:10pt; margin-bottom:18px;">診断でスコアが最も低かった軸から、まず1つだけ実行してください。全部を同時にやる必要はありません。</p>
+
+    <div style="display:flex; flex-direction:column; gap:11px;">
+      <div style="display:flex; align-items:center; gap:14px; background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:14px 16px;">
+        <div style="flex:0 0 70px;"><b style="color:var(--navy);font-size:12pt;">認知力</b></div>
+        <div style="width:1px; height:30px; background:var(--line);"></div>
+        <div style="font-size:10pt; line-height:1.6;">Indeedに無料登録し、求人を1本載せる。</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:14px 16px;">
+        <div style="flex:0 0 70px;"><b style="color:var(--navy);font-size:12pt;">訴求力</b></div>
+        <div style="width:1px; height:30px; background:var(--line);"></div>
+        <div style="font-size:10pt; line-height:1.6;">社員1人に5分ヒアリングし、「働く理由」を文章化する。</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:14px 16px;">
+        <div style="flex:0 0 70px;"><b style="color:var(--navy);font-size:12pt;">導線力</b></div>
+        <div style="width:1px; height:30px; background:var(--line);"></div>
+        <div style="font-size:10pt; line-height:1.6;">応募フォームの必須項目を3つ以内に減らす。</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:14px 16px;">
+        <div style="flex:0 0 70px;"><b style="color:var(--navy);font-size:12pt;">効率力</b></div>
+        <div style="width:1px; height:30px; background:var(--line);"></div>
+        <div style="font-size:10pt; line-height:1.6;">応募者への一次返信テンプレを1つ作る。</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:14px 16px;">
+        <div style="flex:0 0 70px;"><b style="color:var(--navy);font-size:12pt;">将来力</b></div>
+        <div style="width:1px; height:30px; background:var(--line);"></div>
+        <div style="font-size:10pt; line-height:1.6;">来期の採用人数と時期を、紙1枚に書き出す。</div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; background:var(--navy); border-radius:12px; padding:18px 20px;">
+      <p style="color:var(--mint); font-size:9pt; font-weight:700; letter-spacing:.1em; margin-bottom:6px;">POINT</p>
+      <p style="color:#fff; font-size:11pt; line-height:1.8;">採用は「いちばん詰まっている1か所」を直すだけで、全体の流れが大きく変わります。<br/>多くの会社にとって、それは<b style="color:var(--mint);">認知力</b>か<b style="color:var(--mint);">訴求力</b>です。</p>
+    </div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>08</span></div>
+</section>
+
+<!-- ============ P9 30-DAY PLAN + CHECKLIST ============ -->
+<section class="page">
+  <div class="pad">
+    <h2 class="sec">実行プラン</h2>
+    <h3 style="font-size:19pt; font-weight:700; color:var(--navy); margin:8px 0 16px;">30日アクションプラン</h3>
+
+    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:22px;">
+      <div style="display:flex; gap:14px; align-items:flex-start;">
+        <div style="flex:0 0 64px; background:var(--teal); color:#fff; font-weight:700; font-size:9pt; text-align:center; padding:6px 0; border-radius:8px;">1週目</div>
+        <div style="font-size:10pt; line-height:1.7; padding-top:3px;"><b>認知</b>：Indeed登録／自社採用ページとGoogleビジネスプロフィールを最新化。</div>
+      </div>
+      <div style="display:flex; gap:14px; align-items:flex-start;">
+        <div style="flex:0 0 64px; background:var(--teal); color:#fff; font-weight:700; font-size:9pt; text-align:center; padding:6px 0; border-radius:8px;">2週目</div>
+        <div style="font-size:10pt; line-height:1.7; padding-top:3px;"><b>訴求</b>：社員1人インタビュー／「うちで働く理由」を3つ言語化して掲載。</div>
+      </div>
+      <div style="display:flex; gap:14px; align-items:flex-start;">
+        <div style="flex:0 0 64px; background:var(--teal); color:#fff; font-weight:700; font-size:9pt; text-align:center; padding:6px 0; border-radius:8px;">3週目</div>
+        <div style="font-size:10pt; line-height:1.7; padding-top:3px;"><b>導線</b>：応募フォームを簡素化／スマホ表示を確認／カジュアル面談の入口を設置。</div>
+      </div>
+      <div style="display:flex; gap:14px; align-items:flex-start;">
+        <div style="flex:0 0 64px; background:var(--teal); color:#fff; font-weight:700; font-size:9pt; text-align:center; padding:6px 0; border-radius:8px;">4週目</div>
+        <div style="font-size:10pt; line-height:1.7; padding-top:3px;"><b>効率・将来</b>：一次返信テンプレ／応募者管理表／来期の採用計画1枚を作成。</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:13pt; font-weight:700; color:var(--navy); margin-bottom:12px;">チェックリスト</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px 22px;">
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>求人を3チャネル以上に出している</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>社名検索で採用情報が出てくる</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>採用ページに社員の声がある</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>「働く理由」を3つ言える</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>スマホで1分以内に応募できる</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>必須項目は名前と連絡先だけ</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>応募に24時間以内で返信できる</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>応募者の状況を一覧で管理している</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>来期の採用計画が1枚にある</div>
+      <div style="display:flex; gap:8px; font-size:9.5pt;"><span style="width:15px;height:15px;border:1.5px solid var(--teal);border-radius:4px;flex:0 0 auto;"></span>採用にデジタルツールを使っている</div>
+    </div>
+  </div>
+  <div class="foot"><img src="file:///Users/isamu/Desktop/mituke/public/logo.svg"/><span>09</span></div>
+</section>
+
+<!-- ============ P10 NEXT STEP ============ -->
+<section class="page" style="background:var(--cream);">
+  <div class="pad" style="justify-content:center; text-align:center; align-items:center;">
+    <img src="file:///Users/isamu/Desktop/mituke/public/logo.svg" style="height:34px; margin-bottom:30px;" />
+    <h3 style="font-size:22pt; font-weight:700; color:var(--navy); line-height:1.45; margin-bottom:18px;">弱点と「最初の一手」が<br/>見えたら、あとは実行だけ。</h3>
+    <p class="lead" style="max-width:140mm;">
+      とはいえ、自社の状況に合わせて「何から・どの順で」進めるかは、一社ごとに変わります。
+      私たちは地方の中小企業に特化して、採用の立て直しを伴走しています。
+    </p>
+    <div style="background:var(--navy); border-radius:14px; padding:24px 30px; margin-top:28px; max-width:150mm;">
+      <p style="color:var(--mint); font-size:9pt; font-weight:700; letter-spacing:.15em; margin-bottom:8px;">無料・30分・オンライン</p>
+      <p style="color:#fff; font-size:13pt; font-weight:700; line-height:1.6; margin-bottom:6px;">個別ヒアリングで、御社の優先順位を一緒に整理します</p>
+      <p style="color:rgba(255,255,255,.7); font-size:10pt; line-height:1.7;">診断結果をお持ちいただければ、その場で具体的な改善の道筋をお伝えします。</p>
+      <p style="color:var(--mint); font-size:12pt; font-weight:700; margin-top:16px;">▶ mituke.life</p>
+    </div>
+    <div style="margin-top:auto; padding-top:30px;">
+      <p style="font-size:9pt; color:var(--muted); line-height:1.8;">
+        発行：株式会社ハンチス（Hunches Co., Ltd.）　／　mituke.life<br/>
+        対応エリア：長野・群馬・山梨・新潟・埼玉・栃木<br/>
+        本資料の内容は一般的な情報提供を目的としており、成果を保証するものではありません。無断転載を禁じます。
+      </p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
