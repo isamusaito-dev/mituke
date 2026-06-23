@@ -1,0 +1,29 @@
+---
+interface Props {
+  variant?: 'default' | 'light';
+  class?: string;
+}
+const { variant = 'default', class: className = '' } = Astro.props;
+const wordColor = variant === 'light' ? '#FFFFFF' : '#0D1F3D';
+---
+
+<a href="/" class={`inline-flex items-center gap-2.5 ${className}`} aria-label="mitsuke ホーム">
+  <svg height="32" viewBox="0 0 90 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="shrink-0">
+    <path
+      d="M16 84 L16 46 C16 26 42 26 44 50 C46 26 72 26 72 46 L72 84"
+      stroke="#0EA69A"
+      stroke-width="14"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <path
+      d="M47 52 C43 60 57 63 52 70 C48 77 56 80 54 84"
+      stroke="#C3E3D2"
+      stroke-width="7"
+      stroke-linecap="round"
+      fill="none"
+    />
+  </svg>
+  <span class="logo-word" style={`color:${wordColor}`}>mitsuke</span>
+</a>

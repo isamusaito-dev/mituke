@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Logo from '../components/Logo.astro';
 ---
 
 <!doctype html>
@@ -28,9 +29,7 @@ import '../styles/global.css';
     <!-- header -->
     <header class="px-6 py-5 border-b border-[var(--line)]">
       <div class="max-w-5xl mx-auto flex items-center justify-between">
-        <a href="/" class="font-cormorant text-2xl font-medium text-[var(--green)] tracking-wide">
-          Mituke
-        </a>
+        <Logo />
         <span class="text-xs text-[var(--muted)] hidden sm:block">
           地方の採用を、見つけなおす。
         </span>
@@ -177,7 +176,7 @@ import '../styles/global.css';
     <!-- footer -->
     <footer class="px-6 py-8 border-t border-[var(--line)] bg-[var(--green-deep)] mt-20">
       <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-        <span class="font-cormorant text-xl text-white/80">Mituke</span>
+        <Logo variant="light" />
         <p class="text-xs text-white/50">
           © 2025 株式会社ハンチス (Hunches Co., Ltd.) · 対応エリア：長野・群馬・山梨・新潟・埼玉・栃木
         </p>
