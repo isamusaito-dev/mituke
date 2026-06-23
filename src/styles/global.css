@@ -2,14 +2,17 @@
 @import "tailwindcss";
 
 :root {
-  --cream:      #F2F0EA;
-  --paper:      #FAF9F5;
-  --green:      #3B5A3F;
-  --green-deep: #2C4430;
-  --terracotta: #B84130;
-  --ink:        #2A2E29;
-  --muted:      #6F726B;
-  --line:       #DAD7CC;
+  --cream:      #EFF4F3;   /* 背景ベース（クールな生成り） */
+  --paper:      #FFFFFF;   /* カード・セクション背景 */
+  --green:      #0BA696;   /* ティール（ブランド・CTA・アクセント） */
+  --green-deep: #098576;   /* ティール濃（hover） */
+  --terracotta: #162C53;   /* ネイビー（数字・ラベル・強調） */
+  --navy:       #162C53;   /* ネイビー（フッター背景・見出し） */
+  --navy-deep:  #0F2140;   /* ネイビー濃 */
+  --mint:       #B9E1D7;   /* ミント（ハイライト） */
+  --ink:        #1F2A3A;   /* 本文テキスト */
+  --muted:      #69748A;   /* サブテキスト */
+  --line:       #DCE6E3;   /* 罫線・区切り */
 }
 
 body {
@@ -28,6 +31,12 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+.marker {
+  background: linear-gradient(transparent 58%, var(--mint) 58%);
+  padding: 0 0.12em;
+  border-radius: 2px;
 }
 
 @keyframes slide-in {

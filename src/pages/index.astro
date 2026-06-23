@@ -42,20 +42,26 @@ import Logo from '../components/Logo.astro';
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
           <!-- left: copy -->
           <div class="text-center md:text-left order-2 md:order-1">
-            <p class="text-xs text-[var(--terracotta)] font-medium tracking-widest uppercase mb-5">
+            <p class="text-xs text-[var(--green)] font-bold tracking-[0.2em] uppercase mb-5">
               Free Diagnosis Tool
             </p>
-            <h1 class="font-bold text-3xl md:text-5xl text-[var(--ink)] leading-tight mb-6">
-              あなたの会社の採用力を<br />
-              <span class="text-[var(--green)]">5つの軸</span>で診断します。
+            <h1 class="mb-7">
+              <span class="block text-lg md:text-2xl font-medium text-[var(--muted)] mb-2 md:mb-3">
+                あなたの会社の<span class="text-[var(--ink)] font-bold">採用力</span>を、
+              </span>
+              <span class="block text-[2rem] md:text-5xl font-bold text-[var(--navy)] leading-[1.25] tracking-tight">
+                <span class="marker">5つの軸</span>で<br />診断します。
+              </span>
             </h1>
-            <p class="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
-              10問・約3分。回答するだけで、認知力・訴求力・導線力・効率力・将来力のスコアが可視化されます。
-              地方の中小企業に特化した、無料の採用力診断ツールです。
+            <p class="text-[var(--ink)] text-[15px] md:text-base leading-loose mb-8 max-w-xl mx-auto md:mx-0">
+              <span class="font-bold">たった<span class="marker">10問・約3分</span>。</span>
+              <span class="text-[var(--muted)]">回答するだけで、5つの軸からあなたの会社の採用力を可視化します。</span>
+              <br class="hidden md:block" />
+              <span class="text-[var(--muted)]">地方の中小企業に特化した、</span><span class="font-bold text-[var(--green)]">完全無料</span><span class="text-[var(--muted)]">の診断ツールです。</span>
             </p>
             <a
               href="/diagnosis"
-              class="inline-block px-8 py-4 rounded-full bg-[var(--green)] text-white text-sm font-medium hover:bg-[var(--green-deep)] transition-colors shadow-sm"
+              class="inline-block px-8 py-4 rounded-full bg-[var(--green)] text-white text-[15px] font-bold hover:bg-[var(--green-deep)] transition-colors shadow-sm"
             >
               無料で採用力を診断する →
             </a>
@@ -163,7 +169,7 @@ import Logo from '../components/Logo.astro';
                 <!-- unified pill row -->
                 <div class="mt-auto pt-1 flex flex-wrap gap-1.5">
                   {pills.map((p) => (
-                    <span class="text-[11px] px-2.5 py-1 rounded-full bg-[var(--green)]/8 text-[var(--green)] font-medium">{p}</span>
+                    <span class="text-[11px] px-2.5 py-1 rounded-full bg-[var(--green)]/10 text-[var(--navy)] font-medium">{p}</span>
                   ))}
                 </div>
               </div>
@@ -174,7 +180,7 @@ import Logo from '../components/Logo.astro';
     </main>
 
     <!-- footer -->
-    <footer class="px-6 py-8 border-t border-[var(--line)] bg-[var(--green-deep)] mt-20">
+    <footer class="px-6 py-8 bg-[var(--navy)] mt-20">
       <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
         <Logo variant="light" />
         <p class="text-xs text-white/50">
