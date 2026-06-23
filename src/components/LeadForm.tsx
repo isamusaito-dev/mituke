@@ -53,7 +53,7 @@ export default function LeadForm({ totalScore, weakestAxis }: Props) {
             採用改善ガイドをダウンロード ↓
           </a>
           <a
-            href="https://calendly.com/hunches"
+            href="https://timerex.net/s/mitske_me/900fc4c3"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-[var(--navy)] font-medium underline underline-offset-2 hover:text-[var(--green)] transition-colors"
