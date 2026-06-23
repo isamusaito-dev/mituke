@@ -39,30 +39,47 @@ export default function DiagnosisTool() {
 
   if (phase === 'result' && result) {
     return (
-      <div className="animate-fade-in space-y-8">
-        {/* total score */}
-        <div className="text-center">
-          <p className="text-xs text-[var(--muted)] font-light tracking-widest mb-1">
-            あなたの採用力スコア
+      <div className="animate-fade-in space-y-10">
+        {/* ===== HERO：総合スコア（強い緩急の起点） ===== */}
+        <div className="rounded-2xl bg-[var(--navy)] px-6 py-9 text-center">
+          <p className="text-[11px] text-white/60 tracking-[0.2em] uppercase mb-3">
+            Your Score
           </p>
-          <p className="font-cormorant text-[72px] leading-none text-[var(--terracotta)] font-medium">
-            {result.totalScore}
-            <span className="text-2xl text-[var(--muted)] font-light"> / 100</span>
+          <p className="leading-none">
+            <span className="text-7xl font-bold text-[var(--mint)] tabular-nums">
+              {result.totalScore}
+            </span>
+            <span className="text-xl text-white/50 font-medium"> / 100</span>
+          </p>
+          <p className="mt-4 inline-block text-xs font-bold text-white bg-white/10 px-4 py-1.5 rounded-full">
+            {result.totalScore >= 80
+              ? '採用力は高い水準です'
+              : result.totalScore >= 50
+                ? '平均的。まだ伸びしろがあります'
+                : '改善の余地が大きい状態です'}
           </p>
         </div>
 
         {/* radar chart */}
-        <RadarChart axisResults={result.axisResults} />
+        <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-6">
+          <RadarChart axisResults={result.axisResults} />
+        </div>
 
-        {/* axis results */}
-        <div className="space-y-3">
-          {result.axisResults.map((r) => (
-            <ResultCard
-              key={r.axis}
-              result={r}
-              isWeakest={r.axis === result.weakestAxis}
-            />
-          ))}
+        {/* ===== 軸ごとの結果 ===== */}
+        <div>
+          <h2 className="text-base font-bold text-[var(--navy)] mb-1">軸ごとの結果</h2>
+          <p className="text-xs text-[var(--muted)] mb-5">
+            スコアと、いま打つべき一手をまとめました。
+          </p>
+          <div className="space-y-3">
+            {result.axisResults.map((r) => (
+              <ResultCard
+                key={r.axis}
+                result={r}
+                isWeakest={r.axis === result.weakestAxis}
+              />
+            ))}
+          </div>
         </div>
 
         {/* lead form */}

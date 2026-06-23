@@ -78,9 +78,9 @@ export default function RadarChart({ axisResults }: Props) {
       {/* score polygon */}
       <polygon
         points={polygonPoints(scores)}
-        fill="var(--terracotta)"
-        fillOpacity="0.18"
-        stroke="var(--terracotta)"
+        fill="var(--green)"
+        fillOpacity="0.2"
+        stroke="var(--green)"
         strokeWidth="2"
         style={{ transition: 'all 800ms ease-out' }}
       />
@@ -95,10 +95,9 @@ export default function RadarChart({ axisResults }: Props) {
             y={p.y}
             textAnchor="middle"
             dominantBaseline="middle"
-            className="font-serif"
-            fill="var(--green)"
+            fill="var(--navy)"
             fontSize="12"
-            fontWeight="600"
+            fontWeight="700"
           >
             {r.axis}
           </text>

@@ -59,7 +59,7 @@ export default function LeadForm({ totalScore, weakestAxis }: Props) {
     <div>
       <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
         地方の中小企業のための
-        <strong className="text-[var(--ink)]">採用改善ガイド（PDF・約20ページ）を無料でお送りします。</strong>
+        <strong className="text-[var(--ink)]">採用改善ガイド（PDF・約10ページ）を無料でお送りします。</strong>
         採用の5軸ごとに、よくある失敗と打ち手を具体的にまとめた実践資料です。
       </p>
       <div className="mb-6 px-4 py-3 rounded-xl bg-[var(--green)]/8 text-sm text-[var(--ink)] leading-relaxed">
