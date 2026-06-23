@@ -39,25 +39,42 @@ import '../styles/global.css';
 
     <!-- hero -->
     <main>
-      <section class="px-6 py-20 md:py-32 text-center max-w-3xl mx-auto">
-        <p class="text-xs text-[var(--terracotta)] font-medium tracking-widest uppercase mb-6">
-          Free Diagnosis Tool
-        </p>
-        <h1 class="font-serif font-semibold text-3xl md:text-5xl text-[var(--ink)] leading-tight mb-6">
-          あなたの会社の採用力を<br />
-          <span class="text-[var(--green)]">5つの軸</span>で診断します。
-        </h1>
-        <p class="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-10 max-w-xl mx-auto">
-          10問・約3分。回答するだけで、認知力・訴求力・導線力・効率力・将来力のスコアが可視化されます。
-          地方の中小企業に特化した、無料の採用力診断ツールです。
-        </p>
-        <a
-          href="/diagnosis"
-          class="inline-block px-8 py-4 rounded-full bg-[var(--green)] text-white text-sm font-medium hover:bg-[var(--green-deep)] transition-colors shadow-sm"
-        >
-          無料で採用力を診断する →
-        </a>
-        <p class="mt-4 text-xs text-[var(--muted)]">登録不要・完全無料</p>
+      <section class="px-6 py-14 md:py-24 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+          <!-- left: copy -->
+          <div class="text-center md:text-left order-2 md:order-1">
+            <p class="text-xs text-[var(--terracotta)] font-medium tracking-widest uppercase mb-5">
+              Free Diagnosis Tool
+            </p>
+            <h1 class="font-bold text-3xl md:text-5xl text-[var(--ink)] leading-tight mb-6">
+              あなたの会社の採用力を<br />
+              <span class="text-[var(--green)]">5つの軸</span>で診断します。
+            </h1>
+            <p class="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
+              10問・約3分。回答するだけで、認知力・訴求力・導線力・効率力・将来力のスコアが可視化されます。
+              地方の中小企業に特化した、無料の採用力診断ツールです。
+            </p>
+            <a
+              href="/diagnosis"
+              class="inline-block px-8 py-4 rounded-full bg-[var(--green)] text-white text-sm font-medium hover:bg-[var(--green-deep)] transition-colors shadow-sm"
+            >
+              無料で採用力を診断する →
+            </a>
+            <p class="mt-4 text-xs text-[var(--muted)]">登録不要・完全無料</p>
+          </div>
+
+          <!-- right: hero image -->
+          <div class="order-1 md:order-2">
+            <img
+              src="/hero.png"
+              alt="地方の中小企業の採用力を5軸で診断するイメージ"
+              width="1696"
+              height="954"
+              class="w-full h-auto rounded-2xl"
+              loading="eager"
+            />
+          </div>
+        </div>
       </section>
 
       <!-- features / 3ステップ -->
