@@ -6,7 +6,7 @@ interface Props {
   weakestAxis: Axis;
 }
 
-const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // TODO: replace with actual Formspree form ID
+const FORMSPREE_ID = 'mykqzykn';
 
 export default function LeadForm({ totalScore, weakestAxis }: Props) {
   const [submitted, setSubmitted] = useState(false);
