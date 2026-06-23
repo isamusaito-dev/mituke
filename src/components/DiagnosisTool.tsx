@@ -67,7 +67,7 @@ export default function DiagnosisTool() {
 
         {/* lead form */}
         <div className="border-t border-[var(--line)] pt-8">
-          <LeadForm totalScore={result.totalScore} />
+          <LeadForm totalScore={result.totalScore} weakestAxis={result.weakestAxis} />
         </div>
       </div>
     );

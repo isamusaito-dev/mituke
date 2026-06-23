@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import type { Axis } from '../data/questions';
 
 interface Props {
   totalScore: number;
+  weakestAxis: Axis;
 }
 
 const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // TODO: replace with actual Formspree form ID
 
-export default function LeadForm({ totalScore }: Props) {
+export default function LeadForm({ totalScore, weakestAxis }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
@@ -19,7 +21,7 @@ export default function LeadForm({ totalScore }: Props) {
       await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ email, company, score: totalScore }),
+        body: JSON.stringify({ email, company, score: totalScore, weakestAxis }),
       });
       setSubmitted(true);
     } catch {
@@ -33,13 +35,13 @@ export default function LeadForm({ totalScore }: Props) {
     return (
       <div className="text-center py-8 animate-fade-in">
         <p className="text-2xl mb-3">✉️</p>
-        <h3 className="text-lg font-serif font-semibold text-[var(--green)] mb-2">
+        <h3 className="text-lg font-bold text-[var(--green)] mb-2">
           ありがとうございます
         </h3>
         <p className="text-sm text-[var(--muted)] leading-relaxed mb-6">
-          レポートは3営業日以内にお送りします。
+          ガイドはご入力のメールアドレスにお送りします。
           <br />
-          すぐにご相談されたい方は、ヒアリング（無料・30分）をご予約ください。
+          より具体的に相談されたい方は、ヒアリング（無料・30分）もご利用ください。
         </p>
         <a
           href="https://calendly.com/hunches"
@@ -55,11 +57,16 @@ export default function LeadForm({ totalScore }: Props) {
 
   return (
     <div>
-      <p className="text-sm text-[var(--muted)] leading-relaxed mb-6">
-        この診断結果をもとに、御社に合った具体的な改善策をまとめた
-        <br className="hidden sm:block" />
-        <strong className="text-[var(--ink)]">詳細レポート（20〜25ページ）を無料でお送りします。</strong>
+      <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
+        地方の中小企業のための
+        <strong className="text-[var(--ink)]">採用改善ガイド（PDF・約20ページ）を無料でお送りします。</strong>
+        採用の5軸ごとに、よくある失敗と打ち手を具体的にまとめた実践資料です。
       </p>
+      <div className="mb-6 px-4 py-3 rounded-xl bg-[var(--green)]/8 text-sm text-[var(--ink)] leading-relaxed">
+        あなたが今いちばん手をつけるべきは
+        <strong className="text-[var(--green)]">「{weakestAxis}」</strong>
+        。ガイドの該当パートから読むのがおすすめです。
+      </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input
           type="email"
@@ -79,9 +86,9 @@ export default function LeadForm({ totalScore }: Props) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-4 rounded-full bg-[var(--green)] text-white text-sm font-medium hover:bg-[var(--green-deep)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-1"
+          className="w-full py-4 rounded-full bg-[var(--green)] text-white text-sm font-bold hover:bg-[var(--green-deep)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-1"
         >
-          {loading ? '送信中…' : '詳細レポートを受け取る'}
+          {loading ? '送信中…' : '無料ガイドを受け取る'}
         </button>
       </form>
     </div>
