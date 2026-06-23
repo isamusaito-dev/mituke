@@ -57,6 +57,31 @@ export default function LeadForm({ totalScore, weakestAxis }: Props) {
 
   return (
     <div>
+      {/* ガイドのイメージ */}
+      <div className="flex justify-center mb-5">
+        <svg
+          viewBox="0 0 320 200"
+          className="w-[220px] h-auto"
+          role="img"
+          aria-label="採用改善ガイドのイメージ"
+        >
+          {/* 背面ページ */}
+          <rect x="92" y="26" width="150" height="152" rx="8" fill="#F4F8F7" stroke="#DCE6E3" transform="rotate(6 167 102)" />
+          <rect x="78" y="22" width="150" height="154" rx="8" fill="#FFFFFF" stroke="#DCE6E3" transform="rotate(-5 153 99)" />
+          {/* 表紙 */}
+          <rect x="85" y="18" width="150" height="164" rx="10" fill="#162C53" />
+          <text x="160" y="48" textAnchor="middle" fill="#B9E1D7" fontSize="8" letterSpacing="2" fontFamily="sans-serif">RECRUITMENT GUIDE</text>
+          <text x="160" y="64" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontFamily="sans-serif" opacity="0.7">地方の中小企業のための</text>
+          <text x="160" y="92" textAnchor="middle" fill="#FFFFFF" fontSize="20" fontWeight="700" fontFamily="sans-serif">採用改善</text>
+          <text x="160" y="116" textAnchor="middle" fill="#FFFFFF" fontSize="20" fontWeight="700" fontFamily="sans-serif">ガイド</text>
+          {/* ミニレーダー */}
+          <polygon points="160,128 174,138 169,154 151,154 146,138" fill="none" stroke="#0BA696" strokeWidth="1.2" strokeLinejoin="round" />
+          <polygon points="160,135 168,140 165,148 156,149 153,141" fill="#0BA696" fillOpacity="0.35" stroke="#0BA696" strokeWidth="1" strokeLinejoin="round" />
+          {/* バッジ */}
+          <rect x="118" y="160" width="84" height="16" rx="8" fill="#B9E1D7" />
+          <text x="160" y="171" textAnchor="middle" fill="#162C53" fontSize="8" fontWeight="700" fontFamily="sans-serif">PDF · 約10ページ</text>
+        </svg>
+      </div>
       <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
         地方の中小企業のための
         <strong className="text-[var(--ink)]">採用改善ガイド（PDF・約10ページ）を無料でお送りします。</strong>
